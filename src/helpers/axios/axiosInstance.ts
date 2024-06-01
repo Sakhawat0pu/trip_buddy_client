@@ -1,3 +1,4 @@
+"use server";
 import { getAccessTokenFromCookies } from "@/services/actions/getAccessTokenFromCookies";
 import { setAccessTokenToCookiesAndRedirect } from "@/services/actions/setAccessTokenToCookies";
 import { getNewAccessToken } from "@/services/auth.services";
@@ -13,6 +14,7 @@ instance.defaults.timeout = 60000;
 instance.interceptors.request.use(
 	function (config) {
 		const accessToken = getAccessTokenFromCookies();
+
 		if (accessToken) {
 			config.headers.Authorization = accessToken;
 		}

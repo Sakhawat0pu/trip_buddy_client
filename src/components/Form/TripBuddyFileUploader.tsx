@@ -3,7 +3,6 @@ import { SxProps, styled } from "@mui/material/styles";
 import Button from "@mui/material/Button";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { Controller, useFormContext } from "react-hook-form";
-import { Input } from "@mui/material";
 
 const VisuallyHiddenInput = styled("input")({
 	clip: "rect(0 0 0 0)",
@@ -20,12 +19,14 @@ const VisuallyHiddenInput = styled("input")({
 type TFileUploaderProps = {
 	name: string;
 	label?: string;
+	fullWidth?: boolean;
 	sx?: SxProps;
 };
 
 export default function TripBuddyFileUploader({
 	name,
 	label,
+	fullWidth = false,
 	sx,
 }: TFileUploaderProps) {
 	const { control } = useFormContext();
@@ -43,16 +44,15 @@ export default function TripBuddyFileUploader({
 						tabIndex={-1}
 						startIcon={<CloudUploadIcon />}
 						sx={{ ...sx }}
+						fullWidth={fullWidth}
 					>
 						{label || "Upload File"}
-						<Input
+						<input
 							{...field}
-							size="small"
-							type={name}
-							value={value?.filename}
-							onChange={(e) =>
-								onChange((e?.target as HTMLInputElement)?.files?.[0])
-							}
+							multiple
+							type="file"
+							value={value.List}
+							onChange={(e) => onChange((e?.target as HTMLInputElement)?.files)}
 							style={{ display: "none" }}
 						/>
 					</Button>

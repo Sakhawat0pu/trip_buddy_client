@@ -20,7 +20,7 @@ export default function RootLayout({
 	return (
 		<Providers>
 			<html lang="en">
-				<body>
+				<body style={{ margin: 0 }}>
 					<AppRouterCacheProvider>
 						<>
 							<Toaster richColors position="top-center" />

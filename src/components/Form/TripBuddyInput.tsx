@@ -5,8 +5,11 @@ type TTripBuddyInput = {
 	name: string;
 	label?: string;
 	type?: string;
+	placeholder?: string;
 	size?: "small" | "medium";
 	fullWidth?: boolean;
+	multiline?: boolean;
+	rows?: number;
 	sx?: SxProps;
 	required?: boolean;
 };
@@ -14,9 +17,12 @@ type TTripBuddyInput = {
 const TripBuddyInput = ({
 	name,
 	label,
+	placeholder,
 	type = "text",
 	size = "small",
 	fullWidth = false,
+	multiline = false,
+	rows,
 	sx,
 	required,
 }: TTripBuddyInput) => {
@@ -35,9 +41,11 @@ const TripBuddyInput = ({
 					size={size}
 					fullWidth={fullWidth}
 					required={required}
-					placeholder={label}
+					placeholder={placeholder || label}
 					error={!!error?.message}
 					helperText={error?.message}
+					multiline={multiline}
+					rows={rows}
 				/>
 			)}
 		/>

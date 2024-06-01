@@ -4,8 +4,9 @@ import { axiosInstance } from "@/helpers/axios/axiosInstance";
 import { getAccessTokenFromCookies } from "./actions/getAccessTokenFromCookies";
 import { hasAccessToken } from "./actions/hasAccessToken";
 
-export const getUserInfo = () => {
-	const token = getAccessTokenFromCookies();
+export const getUserInfo =  () => {
+	const token =  getAccessTokenFromCookies();
+
 	if (token) {
 		const decodedData: any = jwtDecode(token);
 		return {

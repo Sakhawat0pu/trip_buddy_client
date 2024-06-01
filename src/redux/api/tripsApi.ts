@@ -1,3 +1,4 @@
+import { TMeta } from "@/types";
 import { tagTypes } from "../tagTypes";
 import { baseApi } from "./baseApi";
 
@@ -15,6 +16,10 @@ const tripsApi = baseApi.injectEndpoints({
 				url: "/trips",
 				method: "GET",
 				params: args,
+			}),
+			transformResponse: (data: Record<string, any>[], meta: TMeta) => ({
+				data,
+				meta,
 			}),
 			providesTags: [tagTypes.tripPosts],
 		}),
@@ -47,7 +52,7 @@ const tripsApi = baseApi.injectEndpoints({
 			],
 		}),
 		createATrip: build.mutation({
-			query: (data: Record<string, any>) => ({
+			query: (data) => ({
 				url: "/trips",
 				method: "POST",
 				contentType: "multipart/form-data",

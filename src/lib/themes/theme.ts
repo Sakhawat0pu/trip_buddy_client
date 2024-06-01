@@ -3,7 +3,7 @@ import { createTheme } from "@mui/material/styles";
 export const theme = createTheme({
 	palette: {
 		primary: {
-			main: "#1586FD",
+			main: "#3E8E38",
 		},
 		secondary: {
 			main: "#666F73",
@@ -18,6 +18,11 @@ export const theme = createTheme({
 				root: {
 					padding: "12px 28px",
 				},
+			},
+		},
+		MuiLink: {
+			defaultProps: {
+				underline: "none",
 			},
 		},
 		MuiContainer: {

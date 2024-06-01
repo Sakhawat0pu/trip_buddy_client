@@ -18,7 +18,7 @@ const TripBuddyDatePicker = ({
 	name,
 	label = "",
 	fullWidth = true,
-	size = "medium",
+	size = "small",
 	required,
 	sx,
 }: TDatePicker) => {
@@ -27,7 +27,7 @@ const TripBuddyDatePicker = ({
 		<Controller
 			name={name}
 			control={control}
-			defaultValue={dayjs(new Date().toDateString())}
+			defaultValue={dayjs(new Date().toISOString())}
 			render={({ field: { onChange, value, ...field } }) => {
 				return (
 					<LocalizationProvider dateAdapter={AdapterDayjs}>

@@ -1,28 +1,45 @@
-import { removeTokensFromCookies } from "@/services/actions/removeTokensFromCookies";
-import { getUserInfo, removeUser } from "@/services/auth.services";
-import { Button } from "@mui/material";
+import { getUserInfo } from "@/services/auth.services";
+import { Button, Typography } from "@mui/material";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import Box from "@mui/material/Box";
+
+import UserMenu from "@/components/Shared/NavBar/UserMenu";
+
+type TAuthButtonProps = {
+	handleOpenUserMenu: (e: React.MouseEvent<HTMLElement>) => void;
+	anchorElUser: any;
+	handleCloseUserMenu: () => void;
+};
 
 const AuthButton = () => {
-	const router = useRouter();
 	const userInfo = getUserInfo();
-	const handleLogout = () => {
-		removeUser("/");
-		router.refresh();
-	};
+
 	return (
-		<>
+		<Box
+			sx={{
+				display: "flex",
+				alignItems: "center",
+			}}
+			gap={1}
+		>
 			{userInfo?.email ? (
-				<Button color="error" onClick={handleLogout}>
-					Logout
-				</Button>
+				<Typography
+					color="darkgreen"
+					sx={{ display: { xs: "none", md: "block" } }}
+				>
+					{userInfo.email}
+				</Typography>
 			) : (
-				<Button component={Link} href="/login">
+				""
+			)}
+			{userInfo?.email ? (
+				<UserMenu />
+			) : (
+				<Button component={Link} href="/login" sx={{ bgcolor: "darkgreen" }}>
 					Login
 				</Button>
 			)}
-		</>
+		</Box>
 	);
 };
 
