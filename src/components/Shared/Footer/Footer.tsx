@@ -106,7 +106,7 @@ const Footer = () => {
 						component="p"
 						sx={{ fontSize: { xs: 16, md: 20 } }}
 					>
-						&copy; 2024 Health Care. All rights reserved
+						&copy; 2024 Travel Buddy. All rights reserved
 					</Typography>
 					<Link href="/">
 						<Image src={logo} alt="logo" width={200} height={50} />

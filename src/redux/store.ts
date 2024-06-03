@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { baseApi } from "./api/baseApi";
+import searchTermReducer from "@/redux/slice/searchTermSlice";
 
 export const store = configureStore({
 	reducer: {
+		searchTerm: searchTermReducer,
 		[baseApi.reducerPath]: baseApi.reducer,
 	},
 	middleware: (getDefaultMiddleware) =>

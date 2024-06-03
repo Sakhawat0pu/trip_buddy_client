@@ -32,7 +32,7 @@ const userApi = baseApi.injectEndpoints({
 				method: "PATCH",
 				data: data,
 			}),
-			invalidatesTags: [tagTypes.me],
+			invalidatesTags: [tagTypes.me, tagTypes.user, tagTypes.user],
 		}),
 
 		updateUserRole: build.mutation({
@@ -45,6 +45,7 @@ const userApi = baseApi.injectEndpoints({
 				tagTypes.tripPosts,
 				tagTypes.myPostTrips,
 				tagTypes.myReqTrips,
+				tagTypes.me,
 			],
 		}),
 	}),

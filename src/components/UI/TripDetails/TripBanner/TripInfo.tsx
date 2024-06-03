@@ -74,7 +74,7 @@ const TripInfo = async ({
 						bgcolor: "darkgreen",
 					}}
 				>
-					Book Trip Now
+					Request To Join
 				</Button>
 			</Stack>
 		</Box>

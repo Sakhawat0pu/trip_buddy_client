@@ -34,5 +34,12 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-	matcher: ["/dashboard/:page*", "/share-trip", "/trips/send-request"],
+	matcher: [
+		"/dashboard/:page*",
+		"/share-trip",
+		"/trips/send-request",
+		"/join-requests",
+		"/my-posts",
+		"/my-requested-trips",
+	],
 };

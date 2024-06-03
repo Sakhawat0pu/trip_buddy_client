@@ -1,8 +1,22 @@
+"use client";
 import { Box, Paper, Typography, InputBase, IconButton } from "@mui/material";
 import Image from "next/image";
 import bgImg from "@/assets/hot_ballon.jpg";
+import { useState } from "react";
+import { useAppDispatch, useAppSelector, useDebounced } from "@/redux/hook";
+import { assignSearchTerm } from "@/redux/slice/searchTermSlice";
 
 const AllTripsBanner = () => {
+	const searchTerm = useAppSelector((state) => state.searchTerm.searchTerm);
+	const dispatch = useAppDispatch();
+	const [term, setTerm] = useState<string>(searchTerm || "");
+
+	const debouncedValue = useDebounced({ searchTerm: term, delay: 300 });
+	if (debouncedValue) {
+		dispatch(assignSearchTerm(debouncedValue));
+	} else {
+		dispatch(assignSearchTerm(""));
+	}
 	return (
 		<Box
 			sx={{
@@ -89,7 +103,8 @@ const AllTripsBanner = () => {
 					<InputBase
 						sx={{ ml: 1, flex: 1, py: { md: 1 }, px: "auto" }}
 						placeholder="Search Your Travel Destination"
-						inputProps={{ "aria-label": "search google maps" }}
+						defaultValue={searchTerm ? searchTerm : ""}
+						onChange={(e) => setTerm(e.target.value)}
 					/>
 					<IconButton
 						type="button"

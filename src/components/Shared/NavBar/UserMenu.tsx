@@ -18,6 +18,7 @@ const settings = [
 	{ name: "Share Trip Plan", path: "share-trip" },
 	{ name: "My Trip Posts", path: "my-posts" },
 	{ name: "My Requested Trips", path: "my-requested-trips" },
+	{ name: "Join Requests", path: "join-requests" },
 ];
 const UserMenu = () => {
 	const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);

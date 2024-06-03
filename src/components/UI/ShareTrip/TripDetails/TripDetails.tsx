@@ -43,7 +43,7 @@ const TripDetails = () => {
 				);
 			}
 			const res = await createATrip(formData).unwrap();
-			console.log(res);
+			// console.log(res);
 			if (res?.id) {
 				toast.success(
 					"Congratulations! Your trip plan is now live for others to see."
@@ -60,7 +60,7 @@ const TripDetails = () => {
 				component="h4"
 				fontWeight={600}
 				color="darkseagreen"
-				mb={5}
+				my={{ xs: 7, md: 10 }}
 			>
 				Ready, Set, Plan!
 			</Typography>

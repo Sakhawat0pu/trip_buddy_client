@@ -1,3 +1,4 @@
+"use client";
 import {
 	Box,
 	Button,
@@ -9,8 +10,19 @@ import {
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import Link from "next/link";
+import { useState } from "react";
+import { useAppDispatch, useDebounced } from "@/redux/hook";
+import { assignSearchTerm } from "@/redux/slice/searchTermSlice";
 
 const HeroSectionPage = () => {
+	const dispatch = useAppDispatch();
+	const [term, setTerm] = useState<string>("");
+
+	const debouncedValue = useDebounced({ searchTerm: term, delay: 600 });
+	if (debouncedValue) {
+		dispatch(assignSearchTerm(debouncedValue));
+	}
+
 	return (
 		<Box
 			sx={{
@@ -82,7 +94,7 @@ const HeroSectionPage = () => {
 					<InputBase
 						sx={{ ml: 1, flex: 1 }}
 						placeholder="Search Your Travel Destination"
-						inputProps={{ "aria-label": "search google maps" }}
+						onChange={(e) => setTerm(e.target.value)}
 					/>
 					<IconButton type="button" sx={{ p: "10px" }} aria-label="search">
 						<Link href="/trips">

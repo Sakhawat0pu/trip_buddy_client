@@ -9,6 +9,7 @@ export enum tagTypes {
 	me = "me",
 	travelBuddies = "travelBuddies",
 	requestsToJoinTrip = "requestsToJoinTrip",
+	tripJoinRequests = "tripJoinRequests",
 }
 
 export const tagTypesList = [
@@ -22,4 +23,5 @@ export const tagTypesList = [
 	tagTypes.myReqTrips,
 	tagTypes.travelBuddies,
 	tagTypes.requestsToJoinTrip,
+	tagTypes.tripJoinRequests,
 ];

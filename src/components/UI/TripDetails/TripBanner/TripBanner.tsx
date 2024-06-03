@@ -91,7 +91,7 @@ const TripBanner = ({ bannerImages, user, tripId }: TTripBannerProps) => {
 							bgcolor: "darkgreen",
 						}}
 					>
-						Book Trip Now
+						Request To Join
 					</Button>
 				</Box>
 			</Box>

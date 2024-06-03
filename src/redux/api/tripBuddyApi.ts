@@ -4,11 +4,14 @@ import { baseApi } from "./baseApi";
 const tripBuddyApi = baseApi.injectEndpoints({
 	endpoints: (build) => ({
 		sendRequest: build.mutation({
-			query: (data: Record<string, any>) => ({
-				url: `/trip/${data.id}`,
-				method: "POST",
-				data: data.body,
-			}),
+			query: (data: Record<string, any>) => {
+				return {
+					url: `/trip/${data?.id}/request`,
+					method: "POST",
+					contentType: "application/json",
+					data: data?.body,
+				};
+			},
 			invalidatesTags: [
 				tagTypes.myReqTrips,
 				tagTypes.requestsToJoinTrip,
@@ -24,14 +27,14 @@ const tripBuddyApi = baseApi.injectEndpoints({
 		}),
 		getRequestsToJoinMyTrips: build.query({
 			query: () => ({
-				url: "travel-buddies/requests-to-join",
+				url: "/travel-buddies/requests-to-join",
 				method: "GET",
 			}),
 			providesTags: [tagTypes.requestsToJoinTrip],
 		}),
 		respondToTravelReq: build.mutation({
 			query: (data: Record<string, any>) => ({
-				url: `travel-buddies/${data.buddyId}`,
+				url: `/travel-buddies/${data.userId}/respond`,
 				method: "PATCH",
 				data: data.body,
 			}),
@@ -39,9 +42,11 @@ const tripBuddyApi = baseApi.injectEndpoints({
 				tagTypes.myReqTrips,
 				tagTypes.requestsToJoinTrip,
 				tagTypes.travelBuddies,
+				tagTypes.tripJoinRequests,
 			],
 		}),
 	}),
+	overrideExisting: true,
 });
 
 export const {

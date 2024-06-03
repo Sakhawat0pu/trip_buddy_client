@@ -1,25 +1,17 @@
 "use client";
 import TripsCard from "@/components/Shared/Trips/TripsCard";
-import { useGetAllTripsQuery } from "@/redux/api/tripsApi";
-import { useAppSelector } from "@/redux/hook";
-import { Box, Grid, Stack, Typography } from "@mui/material";
-import Pagination from "@mui/material/Pagination";
+import { useGetMyPostedTripsQuery } from "@/redux/api/tripsApi";
+import { Box, Grid, Pagination, Stack, Typography } from "@mui/material";
 import { useState } from "react";
 
-const AllTripsDetails = () => {
+const MyPostDetails = () => {
 	const [page, setPage] = useState(1);
-	const searchTerm = useAppSelector((state) => state.searchTerm.searchTerm);
-
-	const { data, isLoading } = useGetAllTripsQuery({
+	const { data, isLoading } = useGetMyPostedTripsQuery({
 		sortBy: "createdAt",
 		sortOrder: "desc",
 		page: page,
 		limit: 9,
-		searchTerm,
 	});
-
-	const trips = data?.data;
-	const meta = data?.meta;
 
 	const handlePageChange = (
 		event: React.ChangeEvent<unknown>,
@@ -28,22 +20,25 @@ const AllTripsDetails = () => {
 		setPage(value);
 	};
 
+	const meta = data?.meta;
+	const myTrips = data?.data;
+
 	return (
-		<Box sx={{ my: { xs: 8, md: 10 } }}>
+		<Box my={{ xs: 5, md: 8 }}>
 			<Typography
 				variant="h3"
 				component="h3"
 				color="primary.main"
 				fontWeight={600}
 				textAlign="center"
-				fontSize={{ xs: 30, md: 50 }}
+				fontSize={{ xs: 25, md: 50 }}
 				mb={{ xs: 5, md: 7 }}
 			>
-				Discover Upcoming Trips
+				My Scheduled Trips
 			</Typography>
 			{!isLoading && (
 				<Grid container spacing={2}>
-					{trips?.map((trip: any) => (
+					{myTrips?.map((trip: any) => (
 						<Grid key={trip.id} item xs={12} md={4}>
 							<TripsCard
 								id={trip.id}
@@ -54,6 +49,7 @@ const AllTripsDetails = () => {
 								startDate={trip.startDate}
 								endDate={trip.endDate}
 								budget={trip.budget}
+								showDetails={false}
 							/>
 						</Grid>
 					))}
@@ -77,4 +73,4 @@ const AllTripsDetails = () => {
 	);
 };
 
-export default AllTripsDetails;
+export default MyPostDetails;

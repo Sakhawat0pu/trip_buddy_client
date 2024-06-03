@@ -6,7 +6,7 @@ const tripsApi = baseApi.injectEndpoints({
 	endpoints: (build) => ({
 		getAtrip: build.query({
 			query: (id: string) => ({
-				url: `/trips/${id}`,
+				url: `/trips/${id}/single-trip`,
 				method: "GET",
 			}),
 			providesTags: [tagTypes.tripPost],
@@ -29,6 +29,10 @@ const tripsApi = baseApi.injectEndpoints({
 				method: "GET",
 				params: args,
 			}),
+			transformResponse: (data: Record<string, any>[], meta: TMeta) => ({
+				data,
+				meta,
+			}),
 			providesTags: [tagTypes.myReqTrips],
 		}),
 		getMyPostedTrips: build.query({
@@ -37,7 +41,23 @@ const tripsApi = baseApi.injectEndpoints({
 				method: "GET",
 				params: args,
 			}),
+			transformResponse: (data: Record<string, any>[], meta: TMeta) => ({
+				data,
+				meta,
+			}),
 			providesTags: [tagTypes.myPostTrips],
+		}),
+		getMyTripsJoinRequests: build.query({
+			query: (args: Record<string, any> | undefined) => ({
+				url: "/trips/join-requests",
+				method: "GET",
+				params: args,
+			}),
+			transformResponse: (data: Record<string, any>[], meta: TMeta) => ({
+				data,
+				meta,
+			}),
+			providesTags: [tagTypes.tripJoinRequests],
 		}),
 		deleteATrip: build.mutation({
 			query: (id: string) => ({
@@ -74,5 +94,6 @@ export const {
 	useGetAllTripsQuery,
 	useGetMyPostedTripsQuery,
 	useGetMyRequestedTripsQuery,
+	useGetMyTripsJoinRequestsQuery,
 	useDeleteATripMutation,
 } = tripsApi;

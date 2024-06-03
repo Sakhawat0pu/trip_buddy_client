@@ -1,6 +1,7 @@
 import AllTripsBanner from "@/components/UI/AllTrips/AllTripsBanner/AllTripsBanner";
 import AllTripsDetails from "@/components/UI/AllTrips/AllTripsDetails/AllTripsDetails";
 import { Container } from "@mui/material";
+import { useState } from "react";
 
 const AllTripsPage = () => {
 	return (
