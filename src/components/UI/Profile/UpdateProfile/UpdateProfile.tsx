@@ -3,7 +3,6 @@ import TripBuddyForm from "@/components/Form/TripBuddyForm";
 import TripBuddyInput from "@/components/Form/TripBuddyInput";
 import { useGetMeQuery, useUpdateMeMutation } from "@/redux/api/userApi";
 import { Box, Button, Grid, Stack, Typography } from "@mui/material";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { FieldValues } from "react-hook-form";
 import { toast } from "sonner";
@@ -66,7 +65,12 @@ const UpdateProfile = () => {
 							<TripBuddyInput name="name" label="Name" fullWidth={true} />
 						</Grid>
 						<Grid item xs={12} md={6}>
-							<TripBuddyInput name="email" label="Email" fullWidth={true} />
+							<TripBuddyInput
+								name="email"
+								label="Email"
+								type="email"
+								fullWidth={true}
+							/>
 						</Grid>
 						<Grid item xs={12} md={6}>
 							<TripBuddyInput

@@ -1,4 +1,4 @@
-import { USER_ROLE } from "@/constants/role";
+import { USER_ROLE, USER_STATUS } from "@/constants/role";
 import { SvgIconTypeMap } from "@mui/material";
 import { OverridableComponent } from "@mui/material/OverridableComponent";
 
@@ -10,6 +10,8 @@ export type TMeta = {
 };
 
 export type TUserRole = keyof typeof USER_ROLE;
+
+export type TUserStatus = keyof typeof USER_STATUS;
 
 export type TDrawerItem = {
 	title: string;

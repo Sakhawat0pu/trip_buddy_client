@@ -23,6 +23,24 @@ const MyPostDetails = () => {
 	const meta = data?.meta;
 	const myTrips = data?.data;
 
+	if (myTrips?.length === 0) {
+		return (
+			<Box my={{ xs: 5, md: 8 }}>
+				<Typography
+					variant="h3"
+					component="h3"
+					color="red"
+					fontWeight={600}
+					textAlign="center"
+					fontSize={{ xs: 25, md: 50 }}
+					mb={{ xs: 5, md: 7 }}
+				>
+					You haven't shared any trip plan yet!
+				</Typography>
+			</Box>
+		);
+	}
+
 	return (
 		<Box my={{ xs: 5, md: 8 }}>
 			<Typography

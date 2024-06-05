@@ -32,6 +32,7 @@ const LoginPage = ({ searchParams }: { searchParams: any }) => {
 				const userInfo: any = jwtDecode(res?.data?.accessToken);
 
 				const userRole = userInfo.role.toLowerCase();
+
 				let redirectPath = `/`;
 				if (searchParams.pathname) {
 					redirectPath = searchParams.pathname;

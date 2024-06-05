@@ -41,5 +41,6 @@ export const config = {
 		"/join-requests",
 		"/my-posts",
 		"/my-requested-trips",
+		"/profile/:page*",
 	],
 };

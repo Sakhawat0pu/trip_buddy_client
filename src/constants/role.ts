@@ -3,3 +3,9 @@ export const USER_ROLE = {
 	ADMIN: "admin",
 	TRAVELER: "traveler",
 };
+
+export const USER_STATUS = {
+	ACTIVE: "active",
+	BLOCKED: "blocked",
+	DELETED: "deleted",
+};

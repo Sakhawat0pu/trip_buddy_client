@@ -1,4 +1,4 @@
-import { TUserRole } from "@/types";
+import { TUserRole, TUserStatus } from "@/types";
 import { tagTypes } from "../tagTypes";
 import { baseApi } from "./baseApi";
 
@@ -46,7 +46,32 @@ const userApi = baseApi.injectEndpoints({
 				tagTypes.myPostTrips,
 				tagTypes.myReqTrips,
 				tagTypes.me,
+				tagTypes.user,
+				tagTypes.users,
 			],
+		}),
+		updateUserStatus: build.mutation({
+			query: (data: { id: string; status: TUserStatus }) => ({
+				url: `/users/status/${data?.id}`,
+				method: "PATCH",
+				data: data,
+			}),
+			invalidatesTags: [
+				tagTypes.tripPosts,
+				tagTypes.myPostTrips,
+				tagTypes.myReqTrips,
+				tagTypes.me,
+				tagTypes.user,
+				tagTypes.users,
+			],
+		}),
+		createAdmin: build.mutation({
+			query: (data) => ({
+				url: "/register",
+				method: "POST",
+				data: data,
+			}),
+			invalidatesTags: [tagTypes.users],
 		}),
 	}),
 	overrideExisting: true,
@@ -58,4 +83,6 @@ export const {
 	useGetAllUsersQuery,
 	useUpdateMeMutation,
 	useUpdateUserRoleMutation,
+	useUpdateUserStatusMutation,
+	useCreateAdminMutation,
 } = userApi;
