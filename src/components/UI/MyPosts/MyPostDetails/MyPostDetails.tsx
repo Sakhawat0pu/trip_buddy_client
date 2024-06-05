@@ -23,7 +23,7 @@ const MyPostDetails = () => {
 	const meta = data?.meta;
 	const myTrips = data?.data;
 
-	if (myTrips?.length === 0) {
+	if (!isLoading && myTrips?.length === 0) {
 		return (
 			<Box my={{ xs: 5, md: 8 }}>
 				<Typography

@@ -23,7 +23,7 @@ const JoinRequestsList = () => {
 	const meta = data?.meta;
 	const myTripsJoinRequests = data?.data;
 
-	if (myTripsJoinRequests?.length === 0) {
+	if (!isLoading && myTripsJoinRequests?.length === 0) {
 		return (
 			<Box my={{ xs: 5, md: 8 }}>
 				<Typography

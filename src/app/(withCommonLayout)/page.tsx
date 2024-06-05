@@ -3,6 +3,8 @@ import banner from "@/assets/banner1.jpg";
 import Image from "next/image";
 import HeroSectionPage from "@/components/UI/Homepage/HeroSection/HeroSection";
 import RecentlyTripsPosted from "@/components/UI/Homepage/RecentTrips/RecentlyTripsPosted";
+import FeaturedDestination from "@/components/UI/Homepage/FeaturedDestination/FeaturedDestination";
+import TravelTipsAndGuides from "@/components/UI/Homepage/TravelTipsAndGuides/TravelTipsAndGuides";
 
 const HomePage = () => {
 	return (
@@ -14,6 +16,8 @@ const HomePage = () => {
 		>
 			<HeroSectionPage />
 			<RecentlyTripsPosted />
+			<FeaturedDestination />
+			<TravelTipsAndGuides />
 		</Container>
 	);
 };

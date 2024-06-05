@@ -13,22 +13,22 @@ import { statusColor } from "@/constants/status";
 type TTripProps = {
 	id: string;
 	showDetails?: boolean;
-	name: string;
+	name?: string;
 	imgUrl?: string;
-	destination: string;
-	activities: string[];
-	startDate: string;
-	endDate: string;
-	budget: string;
+	destination?: string;
+	activities?: string[];
+	startDate?: string;
+	endDate?: string;
+	budget?: string;
 	status?: string;
 };
 
 export default function TripsCard({
 	id,
-	name,
+	name = "",
 	showDetails = true,
 	imgUrl,
-	destination,
+	destination = "destination banner image",
 	activities,
 	startDate,
 	endDate,
@@ -37,30 +37,36 @@ export default function TripsCard({
 }: TTripProps) {
 	return (
 		<Card sx={{ maxWidth: 480 }}>
-			<CardHeader
-				avatar={
-					<Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-						{name.substring(0, 1)}
-					</Avatar>
-				}
-				title={`Posted By ${name}`}
-			/>
-			<Image
-				src={imgUrl as string}
-				width={480}
-				height={300}
-				alt={destination}
-			/>
+			{name && (
+				<CardHeader
+					avatar={
+						<Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+							{name.substring(0, 1)}
+						</Avatar>
+					}
+					title={`Posted By ${name}`}
+				/>
+			)}
+			{imgUrl && (
+				<Image
+					src={imgUrl as string}
+					width={480}
+					height={300}
+					alt={destination}
+				/>
+			)}
 			<CardContent>
-				<Typography
-					variant="h5"
-					// color="text.secondary"
-					component="h5"
-					fontWeight={600}
-					mb={2}
-				>
-					{destination}
-				</Typography>
+				{destination && (
+					<Typography
+						variant="h5"
+						// color="text.secondary"
+						component="h5"
+						fontWeight={600}
+						mb={2}
+					>
+						{destination}
+					</Typography>
+				)}
 				{status && (
 					<Typography variant="h6" color="text.secondary" fontSize={18} mb={2}>
 						<strong>Request Status:</strong>{" "}
@@ -73,18 +79,26 @@ export default function TripsCard({
 						</span>
 					</Typography>
 				)}
-				<Typography variant="body2" color="text.secondary">
-					<strong>Activities: </strong> {activities.join(", ")}
-				</Typography>
-				<Typography variant="body2" color="text.secondary">
-					<strong>Start Date: </strong> {startDate}
-				</Typography>
-				<Typography variant="body2" color="text.secondary">
-					<strong>End Date: </strong> {endDate}
-				</Typography>
-				<Typography variant="body2" color="text.secondary">
-					<strong>Budget (est.): </strong> ${budget}
-				</Typography>
+				{activities && (
+					<Typography variant="body2" color="text.secondary">
+						<strong>Activities: </strong> {activities.join(", ")}
+					</Typography>
+				)}
+				{startDate && (
+					<Typography variant="body2" color="text.secondary">
+						<strong>Start Date: </strong> {startDate}
+					</Typography>
+				)}
+				{endDate && (
+					<Typography variant="body2" color="text.secondary">
+						<strong>End Date: </strong> {endDate}
+					</Typography>
+				)}
+				{budget && (
+					<Typography variant="body2" color="text.secondary">
+						<strong>Budget (est.): </strong> ${budget}
+					</Typography>
+				)}
 			</CardContent>
 			{showDetails && (
 				<CardActions disableSpacing sx={{ pb: 2, px: 2 }}>

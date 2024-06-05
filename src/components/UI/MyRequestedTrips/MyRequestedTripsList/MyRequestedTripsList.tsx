@@ -23,7 +23,7 @@ const MyRequestedTripsList = () => {
 	const meta = data?.meta;
 	const myRequestedTrips = data?.data;
 
-	if (myRequestedTrips?.length === 0) {
+	if (!isLoading && myRequestedTrips?.length === 0) {
 		return (
 			<Box my={{ xs: 5, md: 8 }}>
 				<Typography

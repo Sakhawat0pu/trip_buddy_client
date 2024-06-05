@@ -12,17 +12,18 @@ const RecentlyTripsPosted = () => {
 	});
 
 	return (
-		<Box sx={{ my: { xs: 8, md: 10 } }}>
+		<Box sx={{ mt: { xs: 10, md: 12 }, mb: { xs: 6, md: 9 } }}>
 			<Typography
 				variant="h3"
 				component="h3"
 				color="primary.main"
 				fontWeight={600}
 				textAlign="center"
-				fontSize={{ xs: 30, md: 50 }}
+				fontSize={{ xs: 24, md: 40 }}
 				mb={{ xs: 5, md: 7 }}
+				lineHeight={1.5}
 			>
-				Recent Trips
+				Upcoming Trips by Fellow Adventurers
 			</Typography>
 			{!isLoading && (
 				<Grid container spacing={2}>
@@ -42,7 +43,12 @@ const RecentlyTripsPosted = () => {
 					))}
 				</Grid>
 			)}
-			<Stack direction="row" justifyContent="center" alignItems="center" my={5}>
+			<Stack
+				direction="row"
+				justifyContent="center"
+				alignItems="center"
+				mt={{ xs: 6, md: 8 }}
+			>
 				<Link href={`/trips`}>
 					<Button sx={{ textAlign: "center" }} size="large">
 						See More

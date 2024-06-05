@@ -53,17 +53,25 @@ const Footer = () => {
 					>
 						About us
 					</Typography>
-					<Typography
-						variant="h6"
-						component={Link}
-						href="/contact"
-						color="white"
-						sx={{
-							textDecoration: "none",
-							fontSize: { xs: 16, md: 20 },
-						}}
-					>
-						Contact us
+				</Stack>
+				<Stack
+					mt={7}
+					direction="column"
+					justifyContent="center"
+					alignItems="center"
+					gap={1}
+				>
+					<Typography color="white" fontSize={{ xs: 16, md: 20 }}>
+						Contact Us
+					</Typography>
+					<Typography color="white" fontSize={{ xs: 14, md: 16 }}>
+						123 Travel Buddy Lane, Adventure City, World
+					</Typography>
+					<Typography color="white" fontSize={{ xs: 14, md: 16 }}>
+						Email: contact@travelbuddymatcher.com
+					</Typography>
+					<Typography color="white" fontSize={{ xs: 14, md: 16 }}>
+						Telephone: +1 234 567 890
 					</Typography>
 				</Stack>
 				<Stack py={4} direction="row" justifyContent="center" gap={3}>
@@ -104,7 +112,7 @@ const Footer = () => {
 					<Typography
 						color="white"
 						component="p"
-						sx={{ fontSize: { xs: 16, md: 20 } }}
+						sx={{ fontSize: { xs: 14, md: 16 } }}
 					>
 						&copy; 2024 Travel Buddy. All rights reserved
 					</Typography>
@@ -114,7 +122,7 @@ const Footer = () => {
 					<Typography
 						color="white"
 						component="p"
-						sx={{ fontSize: { xs: 16, md: 20 } }}
+						sx={{ fontSize: { xs: 14, md: 16 } }}
 					>
 						Privacy Policy! Terms & Conditions
 					</Typography>
