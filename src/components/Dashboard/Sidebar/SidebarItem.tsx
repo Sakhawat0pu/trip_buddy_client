@@ -5,7 +5,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import { TDrawerItem } from "@/types";
 import { usePathname } from "next/navigation";
-import { styled } from "@mui/material";
+import { styled } from "@mui/material/styles";
 
 const CustomLink = styled(Link)(({ theme }) => ({
 	textDecoration: "none",

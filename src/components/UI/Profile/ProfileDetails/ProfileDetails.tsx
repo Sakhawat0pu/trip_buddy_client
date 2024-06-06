@@ -2,7 +2,7 @@
 
 import { useGetMeQuery } from "@/redux/api/userApi";
 import { Box, Grid, Typography } from "@mui/material";
-import { styled } from "@mui/system";
+import { styled } from "@mui/material/styles";
 
 const StyledBox = styled(Box)(({ theme }) => ({
 	background: "#f4f7fe",

@@ -15,7 +15,7 @@ import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { useGetMeQuery } from "@/redux/api/userApi";
 import Link from "next/link";
-import { styled } from "@mui/material";
+import { styled } from "@mui/material/styles";
 import { useState } from "react";
 
 const CustomLink = styled(Link)(({ theme }) => ({
