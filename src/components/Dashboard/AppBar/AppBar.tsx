@@ -1,5 +1,5 @@
 "use client";
-import * as React from "react";
+
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -16,6 +16,7 @@ import { toast } from "sonner";
 import { useGetMeQuery } from "@/redux/api/userApi";
 import Link from "next/link";
 import { styled } from "@mui/material";
+import { useState } from "react";
 
 const CustomLink = styled(Link)(({ theme }) => ({
 	textDecoration: "none",
@@ -27,9 +28,9 @@ const CustomAppBar = ({ handleDrawerToggle }: { handleDrawerToggle: any }) => {
 	const { data, isLoading } = useGetMeQuery({});
 	const router = useRouter();
 
-	const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+	const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 	const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
-		React.useState<null | HTMLElement>(null);
+		useState<null | HTMLElement>(null);
 
 	const isMenuOpen = Boolean(anchorEl);
 	const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);

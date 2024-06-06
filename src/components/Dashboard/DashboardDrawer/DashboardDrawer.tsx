@@ -1,12 +1,12 @@
 "use client";
 
-import * as React from "react";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import Drawer from "@mui/material/Drawer";
 import Toolbar from "@mui/material/Toolbar";
 import CustomAppBar from "../AppBar/AppBar";
 import SideBar from "../Sidebar/Sidebar";
+import { useState } from "react";
 
 const drawerWidth = 240;
 
@@ -15,8 +15,8 @@ export default function DashboardDrawer({
 }: {
 	children: React.ReactNode;
 }) {
-	const [mobileOpen, setMobileOpen] = React.useState(false);
-	const [isClosing, setIsClosing] = React.useState(false);
+	const [mobileOpen, setMobileOpen] = useState(false);
+	const [isClosing, setIsClosing] = useState(false);
 
 	const handleDrawerClose = () => {
 		setIsClosing(true);
