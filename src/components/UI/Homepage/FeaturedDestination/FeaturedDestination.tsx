@@ -91,8 +91,9 @@ const FeaturedDestination = () => {
 								Experience the Extravagance of the Middle East
 							</Typography>
 							<Typography mb={2}>
-								<strong>Burj Khalifa</strong>: Marvel at the world's tallest
-								building and enjoy breathtaking views from the observation deck.
+								<strong>Burj Khalifa</strong>: Marvel at the world&apos;s
+								tallest building and enjoy breathtaking views from the
+								observation deck.
 							</Typography>
 							<Typography mb={2}>
 								<strong>Desert Safari</strong>: Embark on an adventure through
@@ -165,8 +166,9 @@ const FeaturedDestination = () => {
 								Unveil the Charm of Catalonia
 							</Typography>
 							<Typography mb={2}>
-								<strong>Sagrada Familia</strong>: Admire Gaudí's masterpiece and
-								the intricate architectural details of this iconic basilica.
+								<strong>Sagrada Familia</strong>: Admire Gaudí&apos;s
+								masterpiece and the intricate architectural details of this
+								iconic basilica.
 							</Typography>
 							<Typography mb={2}>
 								<strong>Gothic Quarter</strong>: Wander through narrow medieval
@@ -243,8 +245,8 @@ const FeaturedDestination = () => {
 								stunning panoramic views of Paris
 							</Typography>
 							<Typography mb={2}>
-								<strong>Louvre Museum</strong>: Explore the world's largest art
-								museum and its vast collection, including the Mona Lisa.
+								<strong>Louvre Museum</strong>: Explore the world&apos;s largest
+								art museum and its vast collection, including the Mona Lisa.
 							</Typography>
 							<Typography mb={2}>
 								<strong>Champs-Élysées:</strong>: Stroll along this famous

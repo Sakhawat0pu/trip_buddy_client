@@ -117,7 +117,7 @@ const LoginPage = ({ searchParams }: { searchParams: any }) => {
 								fontWeight={600}
 							>
 								Welcome Back!
-								<br /> We're thrilled to see you again.
+								<br /> We&apos;re thrilled to see you again.
 							</Typography>
 							<Typography pt={3} fontSize={20} fontWeight={500} color="gray">
 								Log in to access your personalized travel recommendations and
@@ -204,8 +204,9 @@ const LoginPage = ({ searchParams }: { searchParams: any }) => {
 								)}
 							</TripBuddyForm>
 							<Typography component="p" fontWeight={300} mt={3}>
-								Don't have an account?{" "}
+								Don&apos;t have an account?
 								<Link href="/register">
+									{" "}
 									<Typography component="span" color="#0000EE">
 										Create an account
 									</Typography>

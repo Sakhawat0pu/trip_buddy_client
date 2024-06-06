@@ -34,7 +34,7 @@ const AboutUsDetail = () => {
 					adventurers worldwide, providing them with the tools, resources, and
 					inspiration they need to embark on their next great adventure. From
 					backpackers seeking hidden gems to luxury travelers in search of
-					indulgence, our platform caters to every traveler's needs and
+					indulgence, our platform caters to every traveler&apos;s needs and
 					aspirations.
 				</Typography>
 				<Typography pb={2}>
@@ -71,9 +71,10 @@ const AboutUsDetail = () => {
 				<Typography pb={2}>
 					We believe that travel has the power to transform lives, broaden
 					perspectives, and foster meaningful connections across cultures.
-					That's why we're dedicated to providing travelers with the resources,
-					support, and inspiration they need to embark on unforgettable journeys
-					that enrich their lives and contribute positively to the world.
+					That&apos;s why we&apos;re dedicated to providing travelers with the
+					resources, support, and inspiration they need to embark on
+					unforgettable journeys that enrich their lives and contribute
+					positively to the world.
 				</Typography>
 				<Typography pb={2}>
 					Through our platform, we aim to promote responsible travel practices,
@@ -230,9 +231,9 @@ const AboutUsDetail = () => {
 				<Typography pb={2}>
 					<q>
 						<i>
-							I love the flexibility and ease of use. Whether I’m planning a
-							short getaway or a long adventure, Travel Buddy always helps me
-							find great travel buddies."
+							I love the flexibility and ease of use. Whether I&apos;m planning
+							a short getaway or a long adventure, Travel Buddy always helps me
+							find great travel buddies.
 						</i>
 					</q>
 					- Mark Taylor

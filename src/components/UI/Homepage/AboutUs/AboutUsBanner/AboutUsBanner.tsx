@@ -41,7 +41,7 @@ const AboutUsBanner = () => {
 				fontSize={{ xs: 14, md: 18 }}
 				display={{ xs: "none", md: "block" }}
 			>
-				We're more than just a travel platform - we're your gateway to
+				We&apos;re more than just a travel platform - we&apos;re your gateway to
 				unforgettable experiences and lifelong memories. <br /> Founded on a
 				passion for exploration and a commitment to connecting travelers
 				worldwide, <br /> we strive to make every journey an enriching and
@@ -54,7 +54,7 @@ const AboutUsBanner = () => {
 				fontSize={{ xs: 14, md: 18 }}
 				display={{ xs: "block", md: "none" }}
 			>
-				We're more than just a travel platform - we're your gateway to
+				We&apos;re more than just a travel platform - we&apos;re your gateway to
 				unforgettable experiences and lifelong memories. Founded on a passion
 				for exploration and a commitment to connecting travelers worldwide, we
 				strive to make every journey an enriching and fulfilling adventure.

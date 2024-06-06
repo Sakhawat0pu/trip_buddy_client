@@ -54,8 +54,8 @@ const SendRequestBanner = () => {
 					fontSize={{ xs: 14 }}
 				>
 					Sign up now to join this incredible adventure and create <br />
-					lasting memories. Whether it's hiking through majestic mountains or
-					exploring vibrant cities, your
+					lasting memories. Whether it&apos;s hiking through majestic mountains
+					or exploring vibrant cities, your
 					<br /> next adventure is just a booking away.
 				</Typography>
 				<Typography

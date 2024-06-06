@@ -267,8 +267,8 @@ const TravelTipsAndGuides = () => {
 						<List>
 							<ListItem>
 								<Typography fontSize={{ xs: 8, md: 14 }}>
-									Research your destination's landmarks, attractions, and local
-									customs.
+									Research your destination&apos;s landmarks, attractions, and
+									local customs.
 								</Typography>
 							</ListItem>
 							<ListItem>

@@ -41,7 +41,7 @@ const MyPostsBanner = () => {
 				fontSize={{ xs: 14, md: 18 }}
 			>
 				Welcome to your hub of adventures! Here, you can see all the exciting
-				journeys you've curated for our community. <br />
+				journeys you&apos;ve curated for our community. <br />
 				Monitor booking requests, update trip details, and engage with fellow
 				travelers. Your journey of exploration and connection starts here!
 			</Typography>

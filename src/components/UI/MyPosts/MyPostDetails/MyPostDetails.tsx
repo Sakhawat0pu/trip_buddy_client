@@ -35,7 +35,7 @@ const MyPostDetails = () => {
 					fontSize={{ xs: 25, md: 50 }}
 					mb={{ xs: 5, md: 7 }}
 				>
-					You haven't shared any trip plan yet!
+					You haven&apos;t shared any trip plan yet!
 				</Typography>
 			</Box>
 		);

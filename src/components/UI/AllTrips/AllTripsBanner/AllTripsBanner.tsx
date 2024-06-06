@@ -82,9 +82,9 @@ const AllTripsBanner = () => {
 					This is your chance to join exciting journeys to destinations around
 					the world, <br /> all planned by other enthusiastic travelers. From
 					action-packed outdoor adventures to relaxing retreats and cultural
-					excursions, <br /> there's something for everyone. Browse through the
-					upcoming trips, find the one that excites you, <br /> and get ready to
-					embark on a journey full of discovery and new friendships.
+					excursions, <br /> there&apos;s something for everyone. Browse through
+					the upcoming trips, find the one that excites you, <br /> and get
+					ready to embark on a journey full of discovery and new friendships.
 				</Typography>
 			</Box>
 
