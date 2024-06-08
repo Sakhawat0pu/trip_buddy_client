@@ -6,7 +6,7 @@ The Travel Buddy Application Frontend is the client-side component of the web ap
 
 ## Live URL
 
-You can access the live version of the frontend application at [here]().
+You can access the live version of the frontend application at [here](https://ct-trip-buddy.vercel.app).
 
 ## Features
 
