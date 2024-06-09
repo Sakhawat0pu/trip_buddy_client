@@ -59,7 +59,6 @@ export default function DashboardDrawer({
 							boxSizing: "border-box",
 							width: { xs: drawerWidth, md: 0 },
 						},
-						bgcolor: "red",
 					}}
 				>
 					<SideBar />

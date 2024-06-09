@@ -40,7 +40,7 @@ The frontend of the Travel Buddy Application is built using the following techno
 4. Add a `.env` file in the root directory with the following environment variables:
 
 ```ts
-NEXT_PUBLIC_BACKEND_URL=
+NEXT_PUBLIC_BACKEND_URL=https://ct-tavel-buddy.com
 ```
 
 5. Start the server using `npm run dev`.

@@ -12,9 +12,9 @@ import MenuItem from "@mui/material/MenuItem";
 
 const pages = [
 	{ name: "Home", path: "" },
-	{ name: "Find trips", path: "posts" },
+	{ name: "Discover upcoming trips", path: "trips" },
 	{ name: "About us", path: "about" },
-	{ name: "Contact us", path: "contact" },
+	// { name: "Contact us", path: "contact" },
 ];
 
 const NavMenu = () => {

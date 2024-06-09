@@ -39,7 +39,7 @@ const Footer = () => {
 							fontSize: { xs: 16, md: 20 },
 						}}
 					>
-						Find trips
+						Discover Upcoming trips
 					</Typography>
 					<Typography
 						variant="h6"
